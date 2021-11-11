@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Week Five - Homework</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="topCities">
+        <a
+          href="https://openweathermap.org/city/468902"
+          target="_blank"
+          class="allLinks"
+          >Yaroslavl</a
+        >
+        //
+        <a
+          href="https://openweathermap.org/city/1496747"
+          target="_blank"
+          class="allLinks"
+          >Novosibirsk</a
+        >
+        //
+        <a
+          href="https://openweathermap.org/city/2013348"
+          target="_blank"
+          class="allLinks"
+          >Vladivostok</a
+        >
+      </div>
+      <form id="city-searchbar">
+        <div class="row">
+          <div class="col-7">
+            <input
+              type="search"
+              placeholder="Please enter a city"
+              autofocus="on"
+              autocomplete="off"
+              id="city-input"
+              class="form-control"
+            />
+          </div>
+
+          <div class="col-2">
+            <button type="submit" class="btn btn-success">Search</button>
+          </div>
+          <div class="col-3">
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              id="current-location-button"
+            >
+              Locate Me
+            </button>
+          </div>
+        </div>
+      </form>
+      <h4>👻</h4>
+      <p id="current-date"></p>
+
+      <div class="row">
+        <div class="col-3">
+          <span id="current-temp"></span>
+          <span id="current-units">°C</span>
+        </div>
+        <div class="col-5">
+          <ul class="weatherMoreInfo">
+            <li>Condition: <span id="current-condition"></span></li>
+            <li>Humidity: <span id="current-humid"></span>%</li>
+            <li>Low: <span id="current-low"></span>°C</li>
+            <li>High: <span id="current-high"></span>°C</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="weatherMoreInfo">
+            <li>Sunrise: <span id="sunrise"></span></li>
+            <li>Sunset: <span id="sunset"></span></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="accuWeathFooter">
+        Need more information? Visit
+        <a href="https://openweathermap.org/" target="_blank" class="allLinks">
+          OpenWeatherMap.org</a
+        >
+        🤓
+      </div>
+    </div>
+    <br />
+    <footer>
+      Thanks to
+      <a href="https://www.shecodes.io/" target="_blank" class="allLinks"
+        >SheCodes</a
+      >, this was coded by Андрия Годошьян 🏒
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+body {
+  font-family: "Roboto Slab", serif;
+}
+h4 {
+  padding: 10px 0px 0px;
+}
+footer {
+  text-align: center;
+}
+.container {
+  border: 5px solid black;
+  border-radius: 15px;
+  max-width: 675px;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+.allLinks {
+  color: #157347;
+  text-decoration: none;
+}
+.allLinks:hover {
+  text-decoration: underline;
+}
+#current-date {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+#current-temp {
+  font-size: 60px;
+}
+#current-units {
+  position: relative;
+  top: -29px;
+}
+#current-condition {
+  text-transform: capitalize;
+}
+.weatherMoreInfo {
+  font-size: 13px;
+  list-style: none;
+  position: relative;
+  top: 15px;
+}
+.accuWeathFooter {
+  text-align: center;
+}
