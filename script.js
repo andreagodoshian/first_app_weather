@@ -1,24 +1,35 @@
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
+  let now = new Date(timestamp);
+
+  let date = now.getDate();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[now.getMonth()];
+
+  let year = now.getFullYear();
+
+  let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
+  let minutes = now.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[date.getDay()];
-  return `Last updated: ${day} ${hours}:${minutes}`;
+
+  return `${date} ${month} ${year}, at ${hours}:${minutes}`;
 }
 
 function sunTime(timestamp) {
@@ -43,16 +54,19 @@ function displayWeatherConditions(response) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+  document
+    .querySelector("#current-icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#current-icon")
+    .setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#current-condition").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#current-humid").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-  document.querySelector("#current-low").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#current-high").innerHTML = Math.round(
-    response.data.main.temp_max
+  document.querySelector("#current-wind").innerHTML = Math.round(
+    response.data.wind.speed
   );
   document.querySelector("#sunrise").innerHTML = sunTime(
     response.data.sys.sunrise * 1000
@@ -98,4 +112,4 @@ searchForm.addEventListener("submit", chooseCity);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-callOpenWeather("Pontiac");
+callOpenWeather("Yakutsk");

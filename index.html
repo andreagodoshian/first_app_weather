@@ -33,17 +33,17 @@
         >
         //
         <a
-          href="https://openweathermap.org/city/1496747"
+          href="https://openweathermap.org/city/581049"
           target="_blank"
           class="allLinks"
-          >Novosibirsk</a
+          >Arkhangelsk</a
         >
         //
         <a
-          href="https://openweathermap.org/city/2013348"
+          href="https://openweathermap.org/city/543878"
           target="_blank"
           class="allLinks"
-          >Vladivostok</a
+          >Kostroma</a
         >
       </div>
       <form id="city-searchbar">
@@ -65,7 +65,7 @@
           <div class="col-3">
             <button
               type="submit"
-              class="btn btn-primary w-100"
+              class="btn btn-primary"
               id="current-location-button"
             >
               Locate Me
@@ -77,27 +77,26 @@
       <p id="current-date"></p>
 
       <div class="row">
-        <div class="col-3">
+        <div class="col-4">
           <span id="current-temp"></span>
           <span id="current-units">°C</span>
         </div>
-        <div class="col-5">
-          <ul class="weatherMoreInfo">
-            <li>Condition: <span id="current-condition"></span></li>
-            <li>Humidity: <span id="current-humid"></span>%</li>
-            <li>Low: <span id="current-low"></span>°C</li>
-            <li>High: <span id="current-high"></span>°C</li>
+        <div class="col-2">
+          <ul>
+            <img src="" alt="" id="current-icon" />
           </ul>
         </div>
         <div class="col">
-          <ul class="weatherMoreInfo">
+          <ul class="weatherStats">
+            <li>Condition: <span id="current-condition"></span></li>
+            <li>Wind: <span id="current-wind"></span> m/s</li>
             <li>Sunrise: <span id="sunrise"></span></li>
             <li>Sunset: <span id="sunset"></span></li>
           </ul>
         </div>
       </div>
       <hr />
-      <div class="accuWeathFooter">
+      <div class="biboliography">
         Need more information? Visit
         <a href="https://openweathermap.org/" target="_blank" class="allLinks">
           OpenWeatherMap.org</a
