@@ -47,6 +47,9 @@ function sunTime(timestamp) {
 
 function displayWeatherConditions(response) {
   console.log(response.data);
+
+  defaultTemp = response.data.main.temp;
+
   document.querySelector("h4").innerHTML = response.data.name;
   document.querySelector("#current-date").innerHTML = formatDate(
     response.data.dt * 1000
@@ -102,9 +105,24 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let dateElement = document.querySelector("#current-date");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
+function showTempInF(event) {
+  event.preventDefault();
+  let convertToF = (defaultTemp * 9) / 5 + 32;
+  document.querySelector("#current-temp").innerHTML = Math.round(convertToF);
+}
+
+function showTempInC(event) {
+  event.preventDefault();
+  document.querySelector("#current-temp").innerHTML = Math.round(defaultTemp);
+}
+
+let defaultTemp = null;
+
+let tempInF = document.querySelector("#f-link");
+tempInF.addEventListener("click", showTempInF);
+
+let tempInC = document.querySelector("#c-link");
+tempInC.addEventListener("click", showTempInC);
 
 let searchForm = document.querySelector("#city-searchbar");
 searchForm.addEventListener("submit", chooseCity);
