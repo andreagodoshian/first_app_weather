@@ -49,3 +49,9 @@ footer {
 .biboliography {
   text-align: center;
 }
+.advisory{
+  color: red;
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+}
